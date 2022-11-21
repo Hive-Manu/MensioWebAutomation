@@ -1,19 +1,10 @@
 package StepDefinition;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import javax.imageio.ImageIO;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
 
 public class CommonUtilities {
 	
@@ -36,14 +27,5 @@ public static void Home()
 {
 	driver.navigate().to("https://dev.mensio.com/home");
 }
-public static void Screenshot(String FolderName, String name) {
-	Screenshot screenshot = new AShot().takeScreenshot(driver); 
-    try {
-		ImageIO.write(screenshot.getImage(), "png", new File("/Users/Manu/eclipse-workspace/MensioWebSanity/target/Screenshots/"+FolderName+"/"+name+".png"));
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	}
 
 }
